@@ -22,6 +22,7 @@ class Api {
         fetch(string)
             .then((res) => res.json())
             .then((res) => {
+
                 this.table = res
             })
             .then(() => {
@@ -41,16 +42,33 @@ class Api {
     tableRow (arrElem){
         const tr = document.createElement('tr')
         const country = document.createElement('td')
-        country.innerText = arrElem.county
+        country.innerText = arrElem.country
         tr.appendChild(country)
         const university = document.createElement('td')
+        university.innerText = arrElem.university
+        tr.appendChild(university)
         const field = document.createElement('td')
+        field.innerText = arrElem.NAME
+        tr.appendChild(field)
         const bsc = document.createElement('td')
+        bsc.innerText = arrElem.ECTS_BSC
+        tr.appendChild(bsc)
         const msc = document.createElement('td')
+        msc.innerText = arrElem.ECTS_MSC
+        tr.appendChild(msc)
         const comm = document.createElement('td')
+        comm.innerText = arrElem.COMMENT
+        tr.appendChild(comm)
         const ivComm = document.createElement('td')
+        ivComm.innerText = arrElem.IV_COMMENT
+        tr.appendChild(ivComm)
         const changedBy = document.createElement('td')
+        changedBy.innerText = arrElem.CHANGED_BY
+        tr.appendChild(changedBy)
         const lastChange = document.createElement('td')
+        const date = new Date(arrElem.LAST_CHANGED * 1000)
+        lastChange.innerText = date.toLocaleDateString()
+        tr.appendChild(lastChange)
         return tr
     }
 }
