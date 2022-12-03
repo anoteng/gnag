@@ -23,6 +23,9 @@ class Api {
             .then(res => {
                 that.table = res
             })
+            .then(() => {
+                this.updateDOM()
+            })
             .catch(err => {
                 console.log(err)
             })
