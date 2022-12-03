@@ -8,7 +8,7 @@ class Api {
         this.get()
     }
     get(){
-        const that = this
+        // const that = this
         let string = this.apiURL
         if(this.county.length > 0){
             string = string + '?country="' + this.county + '"'
@@ -20,6 +20,7 @@ class Api {
             string = string + '?university="' + this.university + '"'
         }
         fetch(string)
+            .then((res) => res.json())
             .then((res) => {
                 this.table = res
             })
