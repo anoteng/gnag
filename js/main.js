@@ -20,13 +20,13 @@ class Api {
             string = string + '?university="' + this.university + '"'
         }
         fetch(string)
-            .then(res => {
+            .then((res) => {
                 this.table = res
             })
             .then(() => {
                 this.updateDOM()
             })
-            .catch(err => {
+            .catch((err) => {
                 console.log(err)
             })
 
