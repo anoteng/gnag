@@ -21,7 +21,7 @@ class Api {
         }
         fetch(string)
             .then(res => {
-                that.table = res
+                this.table = res
             })
             .then(() => {
                 this.updateDOM()
